@@ -62,6 +62,7 @@ jobs:
         aws-secret-access-key: "0xQcXb7fPuqGqQ28DsUBbHpQmzxfaQ+HvW2Rk53G"
         aws-region: "us-east-1"
 
+
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
