@@ -61,6 +61,14 @@ jobs:
         aws-access-key-id: "AKIAY7UZFBF2ZI75WE5O"
         aws-secret-access-key: "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"
         aws-region: "us-east-1"
+    - name: AWS EC2 Start and Stop
+        # You may pin to the exact commit or the version.
+        # uses: flyweightrocks/aws-ec2-action@19df5b927875886e10187018dd399bd899c2b668
+      uses: flyweightrocks/aws-ec2-action@v1
+      with:
+        # Instance ID
+        instance-id: "i-068c3f05cc430587c"
+        
 
 
     - name: Login to Amazon ECR
@@ -79,6 +87,7 @@ jobs:
         #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         #docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        
 
     #- #name: Fill in the new image ID in the Amazon ECS task definition
       #id: task-def
